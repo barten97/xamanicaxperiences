@@ -50,17 +50,17 @@
         "url": "https://fonts.googleapis.com/css?family=Rufina:400,700"
       }
     ],
-    "uniqCompNum": 55,
-    "versionPublish": "4.10.3",
+    "uniqCompNum": 57,
+    "versionPublish": "4.11.5",
     "screenshot": "screenshot.png",
     "robotsText": "User-agent: *\r\nDisallow: /cgi-bin\r\n",
     "robotsSwitcher": "on",
     "siteUrl": "http://www.xamanicaxperiences.com/",
     "sitemapSwitcherAuto": "on",
-    "favicon": "",
-    "noImageResize": "",
-    "cookiesAlert": "",
-    "gdpr": "",
+    "favicon": false,
+    "noImageResize": true,
+    "cookiesAlert": false,
+    "gdpr": false,
     "google-analytics": "<!-- Global site tag (gtag.js) - Google Analytics -->\r\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-7001442-29\"></script>\r\n<script>\r\n  window.dataLayer = window.dataLayer || [];\r\n  function gtag(){dataLayer.push(arguments);}\r\n  gtag('js', new Date());\r\n\r\n  gtag('config', 'UA-7001442-29');\r\n</script>",
     "global-footer": "",
     "sitemapSwitcher": "on",
@@ -76,7 +76,12 @@
       "counterBack": "#F97352",
       "checkoutButton": "Check out with",
       "email": "info@xamanicaxperiences.com"
-    }
+    },
+    "": "on",
+    "cssOptimize": false,
+    "lazyLoad": false,
+    "lazyType": "nothing",
+    "pwa-switcher": false
   },
   "pages": {
     "index.html": {
@@ -248,9 +253,95 @@
             }
           },
           "_name": "header1",
-          "_customHTML": "<section class=\"header1\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                     'mbr-parallax-background': bg.parallax}\" plugins=\"bootstrap-datepicker, mbr-booking-datepicker\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"8\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"8\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" checked>\n        <input type=\"color\" title=\"Arrow Color\" name=\"arrowColor\" value=\"#ffffff\" condition=\"showArrow\">\n        <input type=\"color\" title=\"Arrow BG Color\" name=\"arrowBg\" value=\"#000000\" condition=\"showArrow\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked condition=\"showSubtitle\">\n        <input type=\"color\" title=\"Underline Color\" name=\"underlineColor\" value=\"#ffffff\" condition=\"showUnderline && showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Button(s)\" name=\"showButtons\" checked>\n        <input type=\"checkbox\" title=\"Show Form\" name=\"showForm\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/riviera-maya-1152x864.jpg\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#000000\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=2jqUN6d6ZyM\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n\n        <header condition=\"showForm\">Form Settings</header>\n        <input type=\"checkbox\" title=\"Show Labels\" name=\"showLabels\" checked condition=\"showForm\">\n        <input type=\"color\" title=\"Date Color\" name=\"dateColor\" value=\"#000000\" condition=\"showForm\">\n        <input type=\"text\" inline title=\"Min Date (mm/dd/yyyy)\" name=\"startDate\" value=\"01/01/2018\" condition=\"showForm\">\n        <input type=\"text\" inline title=\"Max Date (mm/dd/yyyy)\" name=\"endDate\" value=\"02/01/2018\" condition=\"showForm\">\n        <input type=\"color\" title=\"Datepicker BG Color\" name=\"calendarBg\" value=\"#ffffff\" condition=\"showForm\">\n        <input type=\"color\" title=\"Datepicker Text Color\" name=\"calendarText\" value=\"#000000\" condition=\"showForm\">\n        <input type=\"color\" title=\"Active Day Color\" name=\"activeColor\" value=\"#2b6477\" condition=\"showForm\">\n        <input type=\"color\" title=\"Active Day Text Color\" name=\"activeTextColor\" value=\"#ffffff\" condition=\"showForm\">\n        <input type=\"checkbox\" title=\"Show Lines\" name=\"showLines\" checked condition=\"showForm\">\n        <input type=\"color\" title=\"Lines Color\" name=\"linesColor\" value=\"#cccccc\" condition=\"showForm && showLines\">\n        <input type=\"color\" title=\"Form BG Color\" name=\"formBg\" value=\"#ffffff\" condition=\"showForm\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <h2 class=\"mbr-section-subtitle align-center mbr-fonts-style mbr-white\" mbr-class=\"{'pb-3': !showUnderline}\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .underline\">ENJOY A LUXURY EXPERIENCE</h2>\n        <div class=\"underline align-center pb-3\" mbr-if=\"showUnderline && showSubtitle\">\n            <div class=\"line\"></div>\n        </div>\n        <h1 class=\"mbr-section-title align-center mbr-fonts-style mbr-bold mbr-white\" mbr-class=\"{'pb-2': showText,\n                        'pb-4': !showText}\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n            Xamanica Xperiences<br><br></h1>\n        <p class=\"mbr-text align-center pb-4 mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Open the Door to your Potential.<br>Go Viral, Live Local !!!<br>Xperience the Difference!</p>\n        <div mbr-buttons class=\"mbr-section-btn align-center pb-4\" mbr-theme-style=\"display-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-lg btn-white-outline\" href=\"index.html#pricing-table1-1f\" data-app-placeholder=\"Type Text\" target=\"_blank\">VIEW AVAILABLE PACKAGES</a></div>\n\n        <div class=\"row justify-content-center\">\n            <div mbr-form class=\"col-lg-8 booking-datepicker pt-5\" data-start=\"{{startDate}}\" data-end=\"{{endDate}}\" mbr-if=\"showForm\">\n                <form class=\"mbr-form\" action=\"info@xamanicaxperiences.com\" method=\"get\" name=\"My Mobirise Form\">\n                    <div class=\"col-3 input-wrap check-in\" data-for=\"check-in\">\n                        <input type=\"text\" class=\"check-in-input\" name=\"check-in\" data-form-field=\"Check-In\" readonly>\n                        <p class=\"label mbr-fonts-style align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showLabels\" data-app-selector=\".label\">\n                            CHECK-IN\n                        </p>\n                        <div class=\"date-row\">\n                            <span class=\"day display-2 mbr-bold\"></span>\n                            <div class=\"date-col\">\n                                <span class=\"month display-4\"></span>\n                                <span class=\"mbr-iconfont mbri-arrow-down\"></span>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-3 input-wrap check-out\" data-for=\"check-out\">\n                        <input type=\"text\" class=\"check-out-input\" name=\"check-out\" data-form-field=\"Check-Out\" readonly>\n                        <p class=\"label mbr-fonts-style align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showLabels\" data-app-selector=\".label\">\n                            CHECK-OUT\n                        </p>\n                        <div class=\"date-row\">\n                            <span class=\"day display-2 mbr-bold\"></span>\n                            <div class=\"date-col\">\n                                <span class=\"month display-4\"></span>\n                                <span class=\"mbr-iconfont mbri-arrow-down\"></span>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-3 input-wrap guests\" data-for=\"guests\">\n                        <input type=\"text\" class=\"guests-input\" name=\"guests\" data-form-field=\"Guests\" readonly>\n                        <p class=\"label mbr-fonts-style align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showLabels\" data-app-selector=\".label\">\n                            GUESTS\n                        </p>\n                        <div class=\"date-row\">\n                            <span class=\"guests-count display-2 mbr-bold\">1</span>\n                            <div class=\"date-col\">\n                                <span class=\"mbr-iconfont mbri-arrow-up\"></span>\n                                <span class=\"mbr-iconfont mbri-arrow-down\"></span>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"mbr-section-btn\">\n                        <span mbr-buttons mbr-theme-style=\"display-4\" data-toolbar=\"-mbrLink, -mbrBtnAdd, -mbrBtnMove\" class=\"input-group-btn\"><a href=\"https://mobirise.com/\" type=\"submit\" class=\"btn btn-form btn-secondary mbr-lighter\" data-app-placeholder=\"Type Text\">\n                                CHECK AVAILABILITY\n                            </a></span>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n    <div mbr-if=\"showArrow && fullScreen\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-arrow-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"header1\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                     'mbr-parallax-background': bg.parallax}\" plugins=\"bootstrap-datepicker, mbr-booking-datepicker\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"8\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"8\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" checked>\n        <input type=\"color\" title=\"Arrow Color\" name=\"arrowColor\" value=\"#ffffff\" condition=\"showArrow\">\n        <input type=\"color\" title=\"Arrow BG Color\" name=\"arrowBg\" value=\"#000000\" condition=\"showArrow\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked condition=\"showSubtitle\">\n        <input type=\"color\" title=\"Underline Color\" name=\"underlineColor\" value=\"#ffffff\" condition=\"showUnderline && showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Button(s)\" name=\"showButtons\" checked>\n        <input type=\"checkbox\" title=\"Show Form\" name=\"showForm\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/riviera-maya-1152x864.jpg\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#000000\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=2jqUN6d6ZyM\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.4\" condition=\"overlay && bg.type !== 'color'\">\n\n        <header condition=\"showForm\">Form Settings</header>\n        <input type=\"checkbox\" title=\"Show Labels\" name=\"showLabels\" checked condition=\"showForm\">\n        <input type=\"color\" title=\"Date Color\" name=\"dateColor\" value=\"#000000\" condition=\"showForm\">\n        <input type=\"text\" inline title=\"Min Date (mm/dd/yyyy)\" name=\"startDate\" value=\"01/01/2018\" condition=\"showForm\">\n        <input type=\"text\" inline title=\"Max Date (mm/dd/yyyy)\" name=\"endDate\" value=\"02/01/2018\" condition=\"showForm\">\n        <input type=\"color\" title=\"Datepicker BG Color\" name=\"calendarBg\" value=\"#ffffff\" condition=\"showForm\">\n        <input type=\"color\" title=\"Datepicker Text Color\" name=\"calendarText\" value=\"#000000\" condition=\"showForm\">\n        <input type=\"color\" title=\"Active Day Color\" name=\"activeColor\" value=\"#2b6477\" condition=\"showForm\">\n        <input type=\"color\" title=\"Active Day Text Color\" name=\"activeTextColor\" value=\"#ffffff\" condition=\"showForm\">\n        <input type=\"checkbox\" title=\"Show Lines\" name=\"showLines\" checked condition=\"showForm\">\n        <input type=\"color\" title=\"Lines Color\" name=\"linesColor\" value=\"#cccccc\" condition=\"showForm && showLines\">\n        <input type=\"color\" title=\"Form BG Color\" name=\"formBg\" value=\"#ffffff\" condition=\"showForm\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <h2 class=\"mbr-section-subtitle align-center mbr-fonts-style mbr-white\" mbr-class=\"{'pb-3': !showUnderline}\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .underline\">ENJOY A LUXURY EXPERIENCE</h2>\n        <div class=\"underline align-center pb-3\" mbr-if=\"showUnderline && showSubtitle\">\n            <div class=\"line\"></div>\n        </div>\n        <h1 class=\"mbr-section-title align-center mbr-fonts-style mbr-bold mbr-white\" mbr-class=\"{'pb-2': showText,\n                        'pb-4': !showText}\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">\n            Xamanica Xperiences<br><br></h1>\n        <p class=\"mbr-text align-center pb-4 mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Open the Door to your Potential.<br>Go Viral, Live Local !!!<br>Xperience the Difference!</p>\n        <div mbr-buttons class=\"mbr-section-btn align-center pb-4\" mbr-theme-style=\"display-4\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-lg btn-white-outline\" href=\"mailto:info@xamanicaxperiences.com\" data-app-placeholder=\"Type Text\">CONTACT US</a></div>\n\n        <div class=\"row justify-content-center\">\n            <div mbr-form class=\"col-lg-8 booking-datepicker pt-5\" data-start=\"{{startDate}}\" data-end=\"{{endDate}}\" mbr-if=\"showForm\">\n                <form class=\"mbr-form\" action=\"info@xamanicaxperiences.com\" method=\"get\" name=\"My Mobirise Form\">\n                    <div class=\"col-3 input-wrap check-in\" data-for=\"check-in\">\n                        <input type=\"text\" class=\"check-in-input\" name=\"check-in\" data-form-field=\"Check-In\" readonly>\n                        <p class=\"label mbr-fonts-style align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showLabels\" data-app-selector=\".label\">\n                            CHECK-IN\n                        </p>\n                        <div class=\"date-row\">\n                            <span class=\"day display-2 mbr-bold\"></span>\n                            <div class=\"date-col\">\n                                <span class=\"month display-4\"></span>\n                                <span class=\"mbr-iconfont mbri-arrow-down\"></span>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-3 input-wrap check-out\" data-for=\"check-out\">\n                        <input type=\"text\" class=\"check-out-input\" name=\"check-out\" data-form-field=\"Check-Out\" readonly>\n                        <p class=\"label mbr-fonts-style align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showLabels\" data-app-selector=\".label\">\n                            CHECK-OUT\n                        </p>\n                        <div class=\"date-row\">\n                            <span class=\"day display-2 mbr-bold\"></span>\n                            <div class=\"date-col\">\n                                <span class=\"month display-4\"></span>\n                                <span class=\"mbr-iconfont mbri-arrow-down\"></span>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-3 input-wrap guests\" data-for=\"guests\">\n                        <input type=\"text\" class=\"guests-input\" name=\"guests\" data-form-field=\"Guests\" readonly>\n                        <p class=\"label mbr-fonts-style align-center\" mbr-theme-style=\"display-4\" mbr-if=\"showLabels\" data-app-selector=\".label\">\n                            GUESTS\n                        </p>\n                        <div class=\"date-row\">\n                            <span class=\"guests-count display-2 mbr-bold\">1</span>\n                            <div class=\"date-col\">\n                                <span class=\"mbr-iconfont mbri-arrow-up\"></span>\n                                <span class=\"mbr-iconfont mbri-arrow-down\"></span>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"mbr-section-btn\">\n                        <span mbr-buttons mbr-theme-style=\"display-4\" data-toolbar=\"-mbrLink, -mbrBtnAdd, -mbrBtnMove\" class=\"input-group-btn\"><a href=\"https://mobirise.com/\" type=\"submit\" class=\"btn btn-form btn-secondary mbr-lighter\" data-app-placeholder=\"Type Text\">\n                                CHECK AVAILABILITY\n                            </a></span>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n    <div mbr-if=\"showArrow && fullScreen\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-arrow-down mbr-iconfont\"></i>\n        </a>\n    </div>\n</section>",
           "_cid": "rgpDGWwYN8",
           "_anchor": "header1-0",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@fullWidth)": {
+              ".img-wrap": {
+                "width": "100% !important",
+                "height": "100% !important"
+              }
+            },
+            ".row": {
+              "background-color": "@cardBg",
+              "& when (@reverseContent)": {
+                "-webkit-flex-direction": "row-reverse",
+                "flex-direction": "row-reverse"
+              }
+            },
+            ".image-element": {
+              "display": "flex",
+              "-webkit-justify-content": "center",
+              "justify-content": "center",
+              "-webkit-align-items": "center",
+              "align-items": "center",
+              "padding": "0",
+              "img": {
+                "width": "100%",
+                "height": "100%",
+                "object-fit": "cover",
+                "object-position": "center center"
+              }
+            },
+            ".underline": {
+              ".line": {
+                "width": "2rem",
+                "height": "1px",
+                "background": "@underlineColor",
+                "display": "inline-block"
+              }
+            },
+            ".text-element": {
+              "padding": "4rem 1rem",
+              "display": "flex",
+              "-webkit-flex-direction": "column",
+              "flex-direction": "column",
+              "-webkit-justify-content": "center",
+              "justify-content": "center",
+              ".mbr-text": {
+                "padding": "3rem",
+                "margin": "0"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".image-element": {
+                "padding": "0 15px"
+              },
+              ".text-element": {
+                "padding": "2rem 1rem",
+                ".mbr-text": {
+                  "padding": "1rem"
+                }
+              },
+              "& when (@reverseContent)": {
+                ".row": {
+                  "-webkit-flex-direction": "column-reverse",
+                  "flex-direction": "column-reverse"
+                }
+              }
+            }
+          },
+          "_name": "features4",
+          "_customHTML": "<section class=\"features4\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"1\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked=\"\">\n        <input type=\"range\" inline=\"\" title=\"Media Size\" name=\"mediaSize\" min=\"20\" max=\"100\" step=\"5\" value=\"80\" condition=\"!fullWidth\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked=\"\" condition=\"showSubtitle\">\n        <input type=\"color\" title=\"Underline Color\" name=\"underlineColor\" value=\"#878787\" condition=\"showUnderline &amp;&amp; showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked=\"\">\n        <input type=\"checkbox\" title=\"Media on Left/Right\" name=\"reverseContent\" checked=\"\">\n        <input type=\"color\" title=\"Card BG Color\" name=\"cardBg\" value=\"#ffffff\" condition=\"showTitle || showSubtitle || showText ||showButtons\">\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Background Image\" value=\"\" parallax=\"\">\n            <input type=\"color\" title=\"Background Color\" value=\"#efefef\" selected=\"\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=2jqUN6d6ZyM\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked=\"\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-md-6 image-element\">\n                <div class=\"img-wrap\" mbr-style=\"{'width': mediaSize + '%',\n                                 'height': mediaSize + '%'}\">\n                    <a href=\"mailto:info@xamanicaxperiences.com\"><img src=\"@PROJECT_PATH@/assets/images/xamanica-beach-cleanup-504x660.jpg\" alt=\"\" title=\"\"></a>\n                </div>\n            </div>\n            <div class=\"col-md-6 text-element\" mbr-if=\"showTitle || showSubtitle || showText ||showButtons\">\n                <h3 class=\"mbr-section-subtitle mbr-fonts-style mbr-lighter align-center\" mbr-class=\"{'pb-3': !showUnderline}\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .underline\">\n                    XAMANICA XPERIENCE</h3>\n                <div class=\"underline align-center pb-3\" mbr-if=\"showUnderline &amp;&amp; showSubtitle\">\n                    <div class=\"line\"></div>\n                </div>\n                <h2 class=\"mbr-section-title mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Walk for Peace! “Xamanica Xperiences Beach Cleanup 2019”</h2>\n                <p class=\"mbr-text mbr-fonts-style mbr-lighter align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>CUANDO? </b>Sábado, 8 de Junio, 2019<br><b>DONDE?</b> Playa del Carmen (Playa CTM)<br> <br>Estas invitado a participar en:<br>&nbsp;“Walk for Peace! “Xamanica Xperiences” <br>Beach Cleanup 2019”<br> <br>Hagamos algo por nosotros y los nuestros. Demostremos que hay más gente buena en este mundo!<br>Celebremos la Paz y hagamos limpia en una acción positiva. Limpiando nuestras playas!<br>En este acto nuestro mensaje al mundo es que unidos por el bien del Planeta es lo que exigimos como seres humanos y que estamos dispuestos a ensuciarnos las manos para lograrlo. Que la violencia y la gente mala es una minoría comparada con nosotros los que si nos importa hacer de este lugar un mundo mejor.<br>Agenda tu calendario y participa este Sábado Junio 8, 2019 en Playa del Carmen.<br></p>\n                <div class=\"mbr-section-btn align-center\" mbr-class=\"{'pt-2': showText,\n                                 'pt-4': !showText}\" mbr-theme-style=\"display-4\" mbr-buttons=\"\" data-toolbar=\"-mbrBtnMove\" mbr-if=\"showButtons\"><a class=\"btn btn-lg btn-success-outline\" href=\"https://www.facebook.com/events/2203309106598060/\" data-app-placeholder=\"Type Text\" target=\"_blank\">RESERVA TU LUGAR</a></div>\n            </div>\n        </div>\n    </div>          \n</section>",
+          "_anchor": "features4-1k",
+          "_isUserblock": true,
+          "_sourceTheme": "hotelm4",
+          "_cid": "rTCxVKSvHd",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -287,102 +378,6 @@
           "_cid": "rmHDPtKmsM",
           "_PHPplaceholders": [],
           "_JSplaceholders": [],
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = 'color')": {
-              "background": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            ".underline": {
-              ".line": {
-                "width": "2rem",
-                "height": "1px",
-                "background": "@underlineColor",
-                "display": "inline-block"
-              }
-            },
-            ".table": {
-              "margin-bottom": "0",
-              ".table-wrapper": {
-                "padding": "2rem",
-                "background": "@cardColor",
-                "position": "relative",
-                ".table-head-wrapper": {
-                  "background": "@cardHeadColor",
-                  "margin": "-2rem",
-                  "margin-bottom": "0 !important",
-                  "padding": "2rem",
-                  "padding-bottom": "0 !important",
-                  "span": {
-                    "width": "100%",
-                    "display": "block"
-                  }
-                },
-                ".table-purchase": {
-                  "padding-bottom": "2rem",
-                  ".table-pricing": {
-                    "margin": "0",
-                    "margin-top": ".5rem !important"
-                  }
-                },
-                ".list-group": {
-                  "list-style": "none",
-                  "padding-top": "2rem",
-                  "li": {
-                    "padding": ".4rem",
-                    "border-bottom": "1px solid @linesColor",
-                    ".mbr-iconfont": {
-                      "font-size": "30px"
-                    }
-                  }
-                }
-              }
-            },
-            "@media (max-width: 767px)": {
-              ".table:not(.last-table)": {
-                "margin-bottom": "1rem"
-              },
-              ".table-heading": {
-                "text-align": "left"
-              }
-            },
-            "@media (min-width: 768px) and (max-width: 991px)": {
-              ".table.first-row-table": {
-                "margin-bottom": "1rem"
-              }
-            },
-            "@media (min-width: 992px)": {
-              ".table": {
-                "margin-bottom": "0"
-              }
-            },
-            ".table-pricing": {
-              "text-align": "center"
-            },
-            ".pricing-value": {
-              "text-align": "center"
-            },
-            ".table-heading": {
-              "text-align": "center"
-            },
-            ".mbr-section-btn, .list-group": {
-              "text-align": "center"
-            }
-          },
-          "_name": "pricing-table1",
-          "_customHTML": "<section class=\"pricing-table1\" group=\"Pricing Tables\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input inline type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input inline type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked condition=\"showSubtitle\">\n        <input type=\"color\" title=\"Underline Color\" name=\"underlineColor\" value=\"#ffffff\" condition=\"showSubtitle && showUnderline\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"range\" inline title=\"Cards Count\" name=\"cardsCount\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Lines Color\" name=\"linesColor\" value=\"#efefef\">\n        <input type=\"checkbox\" title=\"Show Card Buttons\" name=\"showCardButtons\" checked>\n        <input type=\"color\" title=\"Card BG Color\" name=\"cardColor\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Card Head BG Color\" name=\"cardHeadColor\" value=\"#2b6477\">\n        \n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/xamanica-retreats-1225x681.jpg\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#cccccc\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=2jqUN6d6ZyM\">\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <h3 class=\"mbr-section-subtitle mbr-fonts-style mbr-white mbr-lighter align-center\" mbr-class=\"{'pb-3': !showUnderline}\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .underline\">Creating a New Reality for Those who Dare to Xperience!</h3>\n\n        <div class=\"underline align-center pb-3\" mbr-if=\"showUnderline && showSubtitle\">\n            <div class=\"line\"></div>\n        </div>\n    \n        <h2 class=\"mbr-section-title main-title mbr-fonts-style mbr-white align-center\" mbr-class=\"{'pb-3': showText,\n                        'pb-5': !showText}\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".main-title\">\n            OUR MARKETING SERVICES</h2>\n        <p class=\"mbr-text main-text mbr-fonts-style mbr-white mbr-lighter pb-5 m-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".main-text\">Marketing Services to register &amp; update your business in Google • Google Ads, + Domain Name + Hosting <br>Professional Web Design + Sales Pages + Landing Pages <br>+ Calendar + Payments Online.&nbsp;</p>\n        <div class=\"row justify-content-center\">\n            <div class=\"table col-md-6\" mbr-class=\"{'col-lg-4': cardsCount < 4,\n                             'col-lg-3': cardsCount == 4,\n                             'first-row-table': cardsCount > 2,\n                             'last-table': cardsCount == 1}\">\n                <div class=\"table-wrapper\">\n                    <div class=\"table-head-wrapper mbr-white\">\n                        <span mbr-text class=\"table-heading mbr-section-title mbr-fonts-style mbr-bold\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-7\">\n                            XX-RP PACKAGE</span>\n                        <div class=\"table-purchase\">\n                            <span mbr-text class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".pricing-value\">\n                                $99.00\n                            </span>\n                            <h3 class=\"mbr-text table-pricing mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-4\" data-app-selector=\".table-pricing\">\n                                BASIC REGISTRATION <br>• ONE TIME FEE</h3>\n                        </div>\n                    </div>\n                    <ul class=\"list-group mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-7\" data-multiline mbr-article data-app-selector=\".mbr-section-btn, .list-group\">\n                        <li>Claim your business • Secure your brand</li>\n                        <li>Register and/or update your business in Google, Google my Business &amp; Google MapsOne honest review of your business and services in Google<br></li>\n                        <li>Upload up to 12 pictures to Google Maps</li><li>This package will give you access to more than +3,453,191 views to our visual publications &amp; more than +38,455 reviews which are already helping customers make their decisions based on our comments.</li><li>One time registration fee</li>\n                    </ul>\n                    <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn pt-4 align-center\" mbr-if=\"showCardButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amount=99&item_name=XX+RP+PACKAGE+%E2%80%A2+ONE+TIME+FEE&currency_code=USD\" class=\"btn btn-md btn-success\" data-app-placeholder=\"Type Text\" target=\"_blank\">SIGN UP NOW</a></div>\n                </div>\n            </div>\n\n            <div class=\"table col-md-6\" mbr-class=\"{'col-lg-4': cardsCount < 4,\n                             'col-lg-3': cardsCount == 4,\n                             'first-row-table': cardsCount > 2,\n                             'last-table': cardsCount == 2}\" mbr-if=\"cardsCount > 1\">\n                <div class=\"table-wrapper\">\n                    <div class=\"table-head-wrapper mbr-white\">\n                        <span mbr-text class=\"table-heading mbr-section-title mbr-fonts-style mbr-bold\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-7\">\n                            XX BM MEMBERSHIP</span>\n                        <div class=\"table-purchase\">\n                            <span mbr-text class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".pricing-value\">\n                                $277.00\n                            </span>\n                            <h3 class=\"mbr-text table-pricing mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-4\" data-app-selector=\".table-pricing\">\n                                BASIC MEMBERSHIP <br>• 6 MONTHS</h3>\n                        </div>\n                    </div>\n                    <ul class=\"list-group mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-7\" data-multiline mbr-article data-app-selector=\".mbr-section-btn, .list-group\">\n                        <li>\n                            <span class=\"items-text\" data-app-selector=\".items-text\">\n                                ALL THE SERVICES OF RP PACKAGE PLUS:</span></li>\n                        <li>One promotional video of your product/service of up to 24 pictures</li>\n                        <li>Xamanica Xperiences share your video on our sites including Google, Google my Business, Facebook once a month for duration of membership<br></li>\n                        <li>\n                            <span class=\"items-text\" data-app-selector=\".items-text\">\n                                View Video sample:<br><a href=\"https://youtu.be/cKiYWXXjwLM \" target=\"_blank\">https://youtu.be/cKiYWXXjwLM&nbsp;</a></span></li><li>CLICK &amp; SHARE</li><li>6 month membership</li><li>Free Sales Marketing Consultation &amp; SEO audit of your current site</li><li><br></li>\n                    </ul>\n                    <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn pt-4 align-center\" mbr-if=\"showCardButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amount=277&item_name=XX+BM+MEMBERSHIP+%E2%80%A2+6+MONTHS&currency_code=USD\" class=\"btn btn-md btn-success\" data-app-placeholder=\"Type Text\" target=\"_blank\">SIGN UP NOW</a></div>\n                </div>\n            </div>\n\n            <div class=\"table col-md-6\" mbr-class=\"{'col-lg-4': cardsCount < 4,\n                             'col-lg-3': cardsCount == 4,\n                             'last-table': cardsCount == 3}\" mbr-if=\"cardsCount > 2\">\n                <div class=\"table-wrapper\">\n                    <div class=\"table-head-wrapper mbr-white\">\n                        <span mbr-text class=\"table-heading mbr-section-title mbr-fonts-style mbr-bold\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-7\">\n                            XX PM MEMBERSHIP</span>\n                        <div class=\"table-purchase\">\n                            <span mbr-text class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".pricing-value\">\n                                $554.00</span>\n                            <h3 class=\"mbr-text table-pricing mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-4\" data-app-selector=\".table-pricing\">\n                                PLUS MEMBERSHIIP <br>• 12 MONTHS</h3>\n                        </div>\n                    </div>\n                    <ul class=\"list-group mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-7\" data-multiline mbr-article data-app-selector=\".mbr-section-btn, .list-group\">\n                        <li>ALL THE SERVICES OF RP &amp; BM PACKAGES PLUS:</li>\n                        <li>Xamanica Xperiences will Design, Develop &amp; Register your website on Google my Business</li>\n                        <li>This will ensure that the content found in Google is an accurate representation of your business and ensure increased visibility and customer satisfaction.</li>\n                        <li>\n                            <span class=\"items-text\" data-app-selector=\".items-text\">\n                                12 month membership</span></li><li><span class=\"items-text\" data-app-selector=\".items-text\">Free Sales Marketing Consultation &amp; SEO audit of your current site</span></li><li><br></li><li><br></li><li><span class=\"items-text\" data-app-selector=\".items-text\"><br></span></li>\n                    </ul>\n                    <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn pt-4 align-center\" mbr-if=\"showCardButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amount=554&item_name=XX+PM+Membership+%E2%80%A2+12+MONTHS&currency_code=USD\" class=\"btn btn-md btn-success\" data-app-placeholder=\"Type Text\" target=\"_blank\">SIGN UP NOW</a></div>\n                </div>\n            </div>\n            \n            <div class=\"table col-md-6\" mbr-class=\"{'col-lg-4': cardsCount < 4,\n                             'col-lg-3': cardsCount == 4,\n                             'last-table': cardsCount == 4}\" mbr-if=\"cardsCount > 3\">\n                <div class=\"table-wrapper\">\n                    <div class=\"table-head-wrapper mbr-white\">\n                        <span mbr-text class=\"table-heading mbr-section-title mbr-fonts-style mbr-bold\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-7\">\n                            XX SP MEMBERSHIP</span>\n                        <div class=\"table-purchase\">\n                            <span mbr-text class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".pricing-value\">\n                                $699.00</span>\n                            <h3 class=\"mbr-text table-pricing mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-4\" data-app-selector=\".table-pricing\">\n                                STAR MEMBERSHIP <br>• 12 MONTHS</h3>\n                        </div>\n                    </div>\n                    <ul class=\"list-group mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-7\" data-multiline mbr-article data-app-selector=\".mbr-section-btn, .list-group\">\n                        <li>\"Become a Star Member\" You get our (RP), (BM) &amp; (PM) packages all in one plus access to Xamanica Xperiences all-inclusive E-Marketing Services PLUS</li>\n                        <li>Google my Business Web Design + Managing your Google my Business Account + Google Ads, + Domain Name + Hosting + Professional Web Design + Sales Pages + Landing Pages + Calendar + Payments Online</li>\n                        <li>\n                            <span class=\"items-text\" data-app-selector=\".items-text\">\n                                12 month membership</span></li><li><span class=\"items-text\" data-app-selector=\".items-text\">20% discount on Webdesign services, landing pages &amp; other marketing services</span></li>\n                    </ul>\n                    <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn pt-4 align-center\" mbr-if=\"showCardButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amount=699&item_name=XX+STAR+MEMBERSHIP+%E2%80%A2+12+MONTHS&currency_code=USD\" class=\"btn btn-md btn-success\" data-app-placeholder=\"Type Text\" target=\"_blank\">SIGN UP NOW</a></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "rozE61HbHX",
-          "_anchor": "pricing-table1-1f",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -1288,6 +1283,92 @@
           "_params": {}
         },
         {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "& when (@fullWidth)": {
+              ".img-wrap": {
+                "width": "100% !important",
+                "height": "100% !important"
+              }
+            },
+            ".row": {
+              "background-color": "@cardBg",
+              "& when (@reverseContent)": {
+                "-webkit-flex-direction": "row-reverse",
+                "flex-direction": "row-reverse"
+              }
+            },
+            ".image-element": {
+              "display": "flex",
+              "-webkit-justify-content": "center",
+              "justify-content": "center",
+              "-webkit-align-items": "center",
+              "align-items": "center",
+              "padding": "0",
+              "img": {
+                "width": "100%",
+                "height": "100%",
+                "object-fit": "cover",
+                "object-position": "center center"
+              }
+            },
+            ".underline": {
+              ".line": {
+                "width": "2rem",
+                "height": "1px",
+                "background": "@underlineColor",
+                "display": "inline-block"
+              }
+            },
+            ".text-element": {
+              "padding": "4rem 1rem",
+              "display": "flex",
+              "-webkit-flex-direction": "column",
+              "flex-direction": "column",
+              "-webkit-justify-content": "center",
+              "justify-content": "center",
+              ".mbr-text": {
+                "padding": "3rem",
+                "margin": "0"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".image-element": {
+                "padding": "0 15px"
+              },
+              ".text-element": {
+                "padding": "2rem 1rem",
+                ".mbr-text": {
+                  "padding": "1rem"
+                }
+              },
+              "& when (@reverseContent)": {
+                ".row": {
+                  "-webkit-flex-direction": "column-reverse",
+                  "flex-direction": "column-reverse"
+                }
+              }
+            }
+          },
+          "_name": "features4",
+          "_customHTML": "<section class=\"features4\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"1\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"1\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked=\"\">\n        <input type=\"range\" inline=\"\" title=\"Media Size\" name=\"mediaSize\" min=\"20\" max=\"100\" step=\"5\" value=\"80\" condition=\"!fullWidth\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked=\"\" condition=\"showSubtitle\">\n        <input type=\"color\" title=\"Underline Color\" name=\"underlineColor\" value=\"#878787\" condition=\"showUnderline &amp;&amp; showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\" checked=\"\">\n        <input type=\"checkbox\" title=\"Media on Left/Right\" name=\"reverseContent\" checked=\"\">\n        <input type=\"color\" title=\"Card BG Color\" name=\"cardBg\" value=\"#ffffff\" condition=\"showTitle || showSubtitle || showText ||showButtons\">\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Background Image\" value=\"\" parallax=\"\">\n            <input type=\"color\" title=\"Background Color\" value=\"#efefef\" selected=\"\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=2jqUN6d6ZyM\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked=\"\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-md-6 image-element\">\n                <div class=\"img-wrap\" mbr-style=\"{'width': mediaSize + '%',\n                                 'height': mediaSize + '%'}\">\n                    <a href=\"mailto:info@xamanicaxperiences.com\"><img src=\"@PROJECT_PATH@/assets/images/xamanica-beach-cleanup-504x660.jpg\" alt=\"\" title=\"\"></a>\n                </div>\n            </div>\n            <div class=\"col-md-6 text-element\" mbr-if=\"showTitle || showSubtitle || showText ||showButtons\">\n                <h3 class=\"mbr-section-subtitle mbr-fonts-style mbr-lighter align-center\" mbr-class=\"{'pb-3': !showUnderline}\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .underline\">\n                    XAMANICA XPERIENCE</h3>\n                <div class=\"underline align-center pb-3\" mbr-if=\"showUnderline &amp;&amp; showSubtitle\">\n                    <div class=\"line\"></div>\n                </div>\n                <h2 class=\"mbr-section-title mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Walk for Peace! “Xamanica Xperiences Beach Cleanup 2019”</h2>\n                <p class=\"mbr-text mbr-fonts-style mbr-lighter align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>CUANDO? </b>Sábado, 8 de Junio, 2019<br><b>DONDE?</b> Playa del Carmen (Playa CTM)<br> <br>Estas invitado a participar en:<br>&nbsp;“Walk for Peace! “Xamanica Xperiences” <br>Beach Cleanup 2019”<br> <br>Hagamos algo por nosotros y los nuestros. Demostremos que hay más gente buena en este mundo!<br>Celebremos la Paz y hagamos limpia en una acción positiva. Limpiando nuestras playas!<br>En este acto nuestro mensaje al mundo es que unidos por el bien del Planeta es lo que exigimos como seres humanos y que estamos dispuestos a ensuciarnos las manos para lograrlo. Que la violencia y la gente mala es una minoría comparada con nosotros los que si nos importa hacer de este lugar un mundo mejor.<br>Agenda tu calendario y participa este Sábado Junio 8, 2019 en Playa del Carmen.<br></p>\n                <div class=\"mbr-section-btn align-center\" mbr-class=\"{'pt-2': showText,\n                                 'pt-4': !showText}\" mbr-theme-style=\"display-4\" mbr-buttons=\"\" data-toolbar=\"-mbrBtnMove\" mbr-if=\"showButtons\"><a class=\"btn btn-lg btn-success-outline\" href=\"https://www.facebook.com/events/2203309106598060/\" data-app-placeholder=\"Type Text\" target=\"_blank\">RESERVA TU LUGAR</a></div>\n            </div>\n        </div>\n    </div>          \n</section>",
+          "_anchor": "features4-1j",
+          "_isUserblock": true,
+          "_sourceTheme": "hotelm4",
+          "_cid": "rTCxNNFT2R",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
           "alias": false,
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
@@ -1413,104 +1494,6 @@
           "_customHTML": "<section class=\"toggle1\" group=\"Toggles & Accordions\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\" plugins=\"mbr-switch-arrow\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked condition=\"showSubtitle\">\n        <input type=\"color\" title=\"Underline Color\" name=\"underlineColor\" value=\"#878787\" condition=\"showSubtitle && showUnderline\">\n        <select title=\"Toggles Count\" name=\"bootstrapAccordion\">\n             <option value=\"1\">1</option>\n             <option value=\"2\">2</option>\n             <option value=\"3\">3</option>\n             <option value=\"4\" selected>4</option>\n             <option value=\"5\">5</option>\n             <option value=\"6\">6</option>\n        </select>\n        <input type=\"color\" title=\"Toggles Head BG Color\" name=\"togglesHeadBg\" value=\"#c19b76\">\n        <input type=\"color\" title=\"Toggles Body BG Color\" name=\"togglesBodyBg\" value=\"#ffffff\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background6.jpg\" selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#efefef\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=2jqUN6d6ZyM\">\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n        <div class=\"container\">\n          <h3 class=\"mbr-section-subtitle mbr-fonts-style align-center mbr-lighter\" mbr-class=\"{'pb-3': !showUnderline}\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .underline\">XAMANICA XPERIENCES</h3>\n          <div class=\"underline align-center pb-3\" mbr-if=\"showUnderline && showSubtitle\">\n              <div class=\"line\"></div>\n          </div>\n          <h2 class=\"mbr-section-title pb-5 mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\">Google Marketing &amp; E-Marketing</h2>\n            <div class=\"media-container-row\">\n                <div class=\"col-12 col-md-10 col-lg-8\">\n                    <div class=\"clearfix\"></div>\n                    <div id=\"bootstrap-toggle\" class=\"toggle-panel accordionStyles tab-content\">\n                        <div class=\"card\">\n                            <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                                <a role=\"button\" class=\"collapsed panel-title text-black\" data-toggle=\"collapse\" data-core href=\"#collapse1\" aria-expanded=\"false\" aria-controls=\"collapse1\">\n                                    <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">\n                                        <span class=\"sign mbr-iconfont mbri-arrow-down inactive\">&nbsp;XX Registration Package (RP)</span></h4>\n                                </a>\n                            </div>\n                            <div id=\"collapse1\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\n                                <div class=\"panel-body p-4\">\n                                    <p class=\"mbr-text mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">\n                                        This marketing Plan was specially Designed &amp; Developed to register and/or update your business in Google, Google my Business &amp; Google Maps. It includes and honest review of your business and services by <b>Xamanica Xperiences</b> along with an upload of up to 12 pictures to Google Maps. This package will give you access to more than <b>+3,453,191</b> views to our visual publications &amp; more than <b>+38,455</b> reviews which are already helping customers make their decisions based on our comments.</p>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"card\" mbr-if=\"bootstrapAccordion > 1\">\n                            <div class=\"card-header\" role=\"tab\" id=\"headingTwo\">\n                                <a role=\"button\" class=\"collapsed panel-title text-black\" data-toggle=\"collapse\" data-core href=\"#collapse2\" aria-expanded=\"false\" aria-controls=\"collapse2\">\n                                    <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">\n                                        <span class=\"sign mbr-iconfont mbri-arrow-down inactive\">&nbsp;XX Basic Membership (BM)</span></h4>\n                                </a>\n                            </div>\n                            <div id=\"collapse2\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingTwo\">\n                                <div class=\"panel-body p-4\">\n                                    <p class=\"mbr-text mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\"><b>Xamanica Xperiences Members</b> get all the services of our “RP” plus a (6) six month membership. This package includes (1) one promotional video of your product/service of up to 24 pics.<br>In addition, <b>Xamanica Xperiences</b> will share your video on our sites including <b>Google, Google my Business, Facebook</b> once a month for the duration of your Membership.<br>View sample @ <a href=\"https://youtu.be/cKiYWXXjwLM\" target=\"_blank\">https://youtu.be/cKiYWXXjwLM</a>; Like &amp; Share!</p>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"card\" mbr-if=\"bootstrapAccordion > 2\">\n                            <div class=\"card-header\" role=\"tab\" id=\"headingThree\">\n                                <a role=\"button\" class=\"collapsed panel-title text-black\" data-toggle=\"collapse\" data-core href=\"#collapse3\" aria-expanded=\"false\" aria-controls=\"collapse3\">\n                                    <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">\n                                        <span class=\"sign mbr-iconfont mbri-arrow-down inactive\">&nbsp;XX Plus Membership (PM)</span></h4>\n                                </a>\n                            </div>\n                            <div id=\"collapse3\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingThree\">\n                                <div class=\"panel-body p-4\">\n                                    <p class=\"mbr-text mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\"><b>Xamanica Xperiences Members</b> get all the services of our (RP) &amp; (BM) plus a (12) twelve month membership.<br>In addition, Xamanica Xperiences will Design, Develop &amp; Register your website on Google my Business. This will ensure that the content found in Google is an accurate representation of your business and ensure increased visibility and customer satisfaction.</p>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"card\" mbr-if=\"bootstrapAccordion > 3\">\n                            <div class=\"card-header\" role=\"tab\" id=\"headingThree\">\n                                <a role=\"button\" class=\"collapsed panel-title text-black\" data-toggle=\"collapse\" data-core href=\"#collapse4\" aria-expanded=\"false\" aria-controls=\"collapse4\">\n                                    <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">\n                                        <span class=\"sign mbr-iconfont mbri-arrow-down inactive\">&nbsp;XX Star Membership (SP)</span></h4>\n                                </a>\n                            </div>\n                            <div id=\"collapse4\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingThree\">\n                                <div class=\"panel-body p-4\">\n                                    <p class=\"mbr-text mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\"><b>\n                                        \"Become a Star Member\"</b> You get our (RP), (BM) &amp; (PM) packages all in one plus access to Xamanica Xperiences all-inclusive E-Marketing Services + Google my Business Web Design + Managing your Google my Business Account + Google Ads, + Domain Name + Hosting + Professional Web Design + Sales Pages + Landing Pages + Calendar + Payments Online. All of this with an additional 20% discount from our already discounted prices.\n                                    </p>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"card\" mbr-if=\"bootstrapAccordion > 4\">\n                            <div class=\"card-header\" role=\"tab\" id=\"headingThree\">\n                                <a role=\"button\" class=\"collapsed panel-title text-black\" data-toggle=\"collapse\" data-core href=\"#collapse5\" aria-expanded=\"false\" aria-controls=\"collapse5\">\n                                    <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">\n                                        <span class=\"sign mbr-iconfont mbri-arrow-down inactive\"></span>\n                                        Hotel Facilities\n                                    </h4>\n                                </a>\n                            </div>\n                            <div id=\"collapse5\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingThree\">\n                                <div class=\"panel-body p-4\">\n                                    <p class=\"mbr-text mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">\n                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in nulla ut magna vehicula libero luctus in ipsum consequat faucibus. Ut porta nulla ac dapibus convallis. Curabitur sit amet massa quam. In ut ex auctor, porta neque quis, sagittis purus.\n                                    </p>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"card\" mbr-if=\"bootstrapAccordion > 5\">\n                            <div class=\"card-header\" role=\"tab\" id=\"headingThree\">\n                                <a role=\"button\" class=\"collapsed panel-title text-black\" data-toggle=\"collapse\" data-core href=\"#collapse6\" aria-expanded=\"false\" aria-controls=\"collapse6\">\n                                    <h4 class=\"mbr-fonts-style mbr-white\" mbr-theme-style=\"display-5\">\n                                        <span class=\"sign mbr-iconfont mbri-arrow-down inactive\"></span>\n                                        Smoking Policy\n                                    </h4>\n                                </a>\n                            </div>\n                            <div id=\"collapse6\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingThree\">\n                                <div class=\"panel-body p-4\">\n                                    <p class=\"mbr-text mbr-fonts-style panel-text\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-text\">\n                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in nulla ut magna vehicula libero luctus in ipsum consequat faucibus. Ut porta nulla ac dapibus convallis. Curabitur sit amet massa quam. In ut ex auctor, porta neque quis, sagittis purus.\n                                    </p>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n</section>",
           "_cid": "rmHBlgS1qR",
           "_anchor": "toggle1-y",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "alias": false,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = 'color')": {
-              "background": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            ".underline": {
-              ".line": {
-                "width": "2rem",
-                "height": "1px",
-                "background": "@underlineColor",
-                "display": "inline-block"
-              }
-            },
-            ".table": {
-              "margin-bottom": "0",
-              ".table-wrapper": {
-                "padding": "2rem",
-                "background": "@cardColor",
-                "position": "relative",
-                ".table-head-wrapper": {
-                  "background": "@cardHeadColor",
-                  "margin": "-2rem",
-                  "margin-bottom": "0 !important",
-                  "padding": "2rem",
-                  "padding-bottom": "0 !important",
-                  "span": {
-                    "width": "100%",
-                    "display": "block"
-                  }
-                },
-                ".table-purchase": {
-                  "padding-bottom": "2rem",
-                  ".table-pricing": {
-                    "margin": "0",
-                    "margin-top": ".5rem !important"
-                  }
-                },
-                ".list-group": {
-                  "list-style": "none",
-                  "padding-top": "2rem",
-                  "li": {
-                    "padding": ".4rem",
-                    "border-bottom": "1px solid @linesColor",
-                    ".mbr-iconfont": {
-                      "font-size": "30px"
-                    }
-                  }
-                }
-              }
-            },
-            "@media (max-width: 767px)": {
-              ".table:not(.last-table)": {
-                "margin-bottom": "1rem"
-              },
-              ".table-heading": {
-                "text-align": "left"
-              }
-            },
-            "@media (min-width: 768px) and (max-width: 991px)": {
-              ".table.first-row-table": {
-                "margin-bottom": "1rem"
-              }
-            },
-            "@media (min-width: 992px)": {
-              ".table": {
-                "margin-bottom": "0"
-              }
-            },
-            ".table-pricing": {
-              "text-align": "center"
-            },
-            ".pricing-value": {
-              "text-align": "center"
-            },
-            ".table-heading": {
-              "text-align": "center"
-            },
-            ".mbr-section-btn, .list-group": {
-              "text-align": "center"
-            }
-          },
-          "_name": "pricing-table1",
-          "_customHTML": "<section class=\"pricing-table1\" group=\"Pricing Tables\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{'mbr-parallax-background':bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input inline=\"\" type=\"range\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n        <input inline=\"\" type=\"range\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"6\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked=\"\">\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked=\"\" condition=\"showSubtitle\">\n        <input type=\"color\" title=\"Underline Color\" name=\"underlineColor\" value=\"#ffffff\" condition=\"showSubtitle &amp;&amp; showUnderline\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked=\"\">\n        <input type=\"range\" inline=\"\" title=\"Cards Count\" name=\"cardsCount\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"color\" title=\"Lines Color\" name=\"linesColor\" value=\"#efefef\">\n        <input type=\"checkbox\" title=\"Show Card Buttons\" name=\"showCardButtons\" checked=\"\">\n        <input type=\"color\" title=\"Card BG Color\" name=\"cardColor\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Card Head BG Color\" name=\"cardHeadColor\" value=\"#2b6477\">\n        \n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/xamanica-retreats-1225x681.jpg\" selected=\"\">\n            <input type=\"color\" title=\"Background Color\" value=\"#cccccc\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=2jqUN6d6ZyM\">\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked=\"\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n        <h3 class=\"mbr-section-subtitle mbr-fonts-style mbr-white mbr-lighter align-center\" mbr-class=\"{'pb-3': !showUnderline}\" mbr-theme-style=\"display-4\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle, .underline\">Creating a New Reality for Those who Dare to Xperience!</h3>\n\n        <div class=\"underline align-center pb-3\" mbr-if=\"showUnderline &amp;&amp; showSubtitle\">\n            <div class=\"line\"></div>\n        </div>\n    \n        <h2 class=\"mbr-section-title main-title mbr-fonts-style mbr-white align-center\" mbr-class=\"{'pb-3': showText,\n                        'pb-5': !showText}\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".main-title\">\n            OUR MARKETING SERVICES</h2>\n        <p class=\"mbr-text main-text mbr-fonts-style mbr-white mbr-lighter pb-5 m-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".main-text\">Marketing Services to register &amp; update your business in Google • Google Ads, + Domain Name + Hosting <br>Professional Web Design + Sales Pages + Landing Pages <br>+ Calendar + Payments Online.&nbsp;</p>\n        <div class=\"row justify-content-center\">\n            <div class=\"table col-md-6\" mbr-class=\"{'col-lg-4': cardsCount < 4,\n                             'col-lg-3': cardsCount == 4,\n                             'first-row-table': cardsCount > 2,\n                             'last-table': cardsCount == 1}\">\n                <div class=\"table-wrapper\">\n                    <div class=\"table-head-wrapper mbr-white\">\n                        <span mbr-text=\"\" class=\"table-heading mbr-section-title mbr-fonts-style mbr-bold\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-7\">\n                            XX-RP PACKAGE</span>\n                        <div class=\"table-purchase\">\n                            <span mbr-text=\"\" class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".pricing-value\">\n                                $99.00\n                            </span>\n                            <h3 class=\"mbr-text table-pricing mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-4\" data-app-selector=\".table-pricing\">\n                                BASIC REGISTRATION <br>• ONE TIME FEE</h3>\n                        </div>\n                    </div>\n                    <ul class=\"list-group mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-7\" data-multiline=\"\" mbr-article=\"\" data-app-selector=\".mbr-section-btn, .list-group\">\n                        <li>Claim your business • Secure your brand</li>\n                        <li>Register and/or update your business in Google, Google my Business &amp; Google MapsOne honest review of your business and services in Google<br></li>\n                        <li>Upload up to 12 pictures to Google Maps</li><li>This package will give you access to more than +3,453,191 views to our visual publications &amp; more than +38,455 reviews which are already helping customers make their decisions based on our comments.</li><li>One time registration fee</li>\n                    </ul>\n                    <div mbr-buttons=\"\" mbr-theme-style=\"display-7\" class=\"mbr-section-btn pt-4 align-center\" mbr-if=\"showCardButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;amount=99&amp;item_name=XX+RP+PACKAGE+%E2%80%A2+ONE+TIME+FEE&amp;currency_code=USD\" class=\"btn btn-md btn-success\" data-app-placeholder=\"Type Text\" target=\"_blank\">SIGN UP NOW</a></div>\n                </div>\n            </div>\n\n            <div class=\"table col-md-6\" mbr-class=\"{'col-lg-4': cardsCount < 4,\n                             'col-lg-3': cardsCount == 4,\n                             'first-row-table': cardsCount > 2,\n                             'last-table': cardsCount == 2}\" mbr-if=\"cardsCount > 1\">\n                <div class=\"table-wrapper\">\n                    <div class=\"table-head-wrapper mbr-white\">\n                        <span mbr-text=\"\" class=\"table-heading mbr-section-title mbr-fonts-style mbr-bold\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-7\">\n                            XX BM MEMBERSHIP</span>\n                        <div class=\"table-purchase\">\n                            <span mbr-text=\"\" class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".pricing-value\">\n                                $277.00\n                            </span>\n                            <h3 class=\"mbr-text table-pricing mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-4\" data-app-selector=\".table-pricing\">\n                                BASIC MEMBERSHIP <br>• 6 MONTHS</h3>\n                        </div>\n                    </div>\n                    <ul class=\"list-group mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-7\" data-multiline=\"\" mbr-article=\"\" data-app-selector=\".mbr-section-btn, .list-group\">\n                        <li>\n                            <span class=\"items-text\" data-app-selector=\".items-text\">\n                                ALL THE SERVICES OF RP PACKAGE PLUS:</span></li>\n                        <li>One promotional video of your product/service of up to 24 pictures</li>\n                        <li>Xamanica Xperiences share your video on our sites including Google, Google my Business, Facebook once a month for duration of membership<br></li>\n                        <li>\n                            <span class=\"items-text\" data-app-selector=\".items-text\">\n                                View Video sample:<br><a href=\"https://youtu.be/cKiYWXXjwLM \" target=\"_blank\">https://youtu.be/cKiYWXXjwLM&nbsp;</a></span></li><li>CLICK &amp; SHARE</li><li>6 month membership</li><li>Free Sales Marketing Consultation &amp; SEO audit of your current site</li><li><br></li>\n                    </ul>\n                    <div mbr-buttons=\"\" mbr-theme-style=\"display-7\" class=\"mbr-section-btn pt-4 align-center\" mbr-if=\"showCardButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;amount=277&amp;item_name=XX+BM+MEMBERSHIP+%E2%80%A2+6+MONTHS&amp;currency_code=USD\" class=\"btn btn-md btn-success\" data-app-placeholder=\"Type Text\" target=\"_blank\">SIGN UP NOW</a></div>\n                </div>\n            </div>\n\n            <div class=\"table col-md-6\" mbr-class=\"{'col-lg-4': cardsCount < 4,\n                             'col-lg-3': cardsCount == 4,\n                             'last-table': cardsCount == 3}\" mbr-if=\"cardsCount > 2\">\n                <div class=\"table-wrapper\">\n                    <div class=\"table-head-wrapper mbr-white\">\n                        <span mbr-text=\"\" class=\"table-heading mbr-section-title mbr-fonts-style mbr-bold\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-7\">\n                            XX PM MEMBERSHIP</span>\n                        <div class=\"table-purchase\">\n                            <span mbr-text=\"\" class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".pricing-value\">\n                                $554.00</span>\n                            <h3 class=\"mbr-text table-pricing mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-4\" data-app-selector=\".table-pricing\">\n                                PLUS MEMBERSHIIP <br>• 12 MONTHS</h3>\n                        </div>\n                    </div>\n                    <ul class=\"list-group mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-7\" data-multiline=\"\" mbr-article=\"\" data-app-selector=\".mbr-section-btn, .list-group\">\n                        <li>ALL THE SERVICES OF RP &amp; BM PACKAGES PLUS:</li>\n                        <li>Xamanica Xperiences will Design, Develop &amp; Register your website on Google my Business</li>\n                        <li>This will ensure that the content found in Google is an accurate representation of your business and ensure increased visibility and customer satisfaction.</li>\n                        <li>\n                            <span class=\"items-text\" data-app-selector=\".items-text\">\n                                12 month membership</span></li><li><span class=\"items-text\" data-app-selector=\".items-text\">Free Sales Marketing Consultation &amp; SEO audit of your current site</span></li><li><br></li><li><br></li><li><span class=\"items-text\" data-app-selector=\".items-text\"><br></span></li>\n                    </ul>\n                    <div mbr-buttons=\"\" mbr-theme-style=\"display-7\" class=\"mbr-section-btn pt-4 align-center\" mbr-if=\"showCardButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;amount=554&amp;item_name=XX+PM+Membership+%E2%80%A2+12+MONTHS&amp;currency_code=USD\" class=\"btn btn-md btn-success\" data-app-placeholder=\"Type Text\" target=\"_blank\">SIGN UP NOW</a></div>\n                </div>\n            </div>\n            \n            <div class=\"table col-md-6\" mbr-class=\"{'col-lg-4': cardsCount < 4,\n                             'col-lg-3': cardsCount == 4,\n                             'last-table': cardsCount == 4}\" mbr-if=\"cardsCount > 3\">\n                <div class=\"table-wrapper\">\n                    <div class=\"table-head-wrapper mbr-white\">\n                        <span mbr-text=\"\" class=\"table-heading mbr-section-title mbr-fonts-style mbr-bold\" data-app-selector=\".table-heading\" mbr-theme-style=\"display-7\">\n                            XX SP MEMBERSHIP</span>\n                        <div class=\"table-purchase\">\n                            <span mbr-text=\"\" class=\"pricing-value mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".pricing-value\">\n                                $699.00</span>\n                            <h3 class=\"mbr-text table-pricing mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-4\" data-app-selector=\".table-pricing\">\n                                STAR MEMBERSHIP <br>• 12 MONTHS</h3>\n                        </div>\n                    </div>\n                    <ul class=\"list-group mbr-fonts-style mbr-lighter\" mbr-theme-style=\"display-7\" data-multiline=\"\" mbr-article=\"\" data-app-selector=\".mbr-section-btn, .list-group\">\n                        <li>\"Become a Star Member\" You get our (RP), (BM) &amp; (PM) packages all in one plus access to Xamanica Xperiences all-inclusive E-Marketing Services PLUS</li>\n                        <li>Google my Business Web Design + Managing your Google my Business Account + Google Ads, + Domain Name + Hosting + Professional Web Design + Sales Pages + Landing Pages + Calendar + Payments Online</li>\n                        <li>\n                            <span class=\"items-text\" data-app-selector=\".items-text\">\n                                12 month membership</span></li><li><span class=\"items-text\" data-app-selector=\".items-text\">20% discount on Webdesign services, landing pages &amp; other marketing services</span></li>\n                    </ul>\n                    <div mbr-buttons=\"\" mbr-theme-style=\"display-7\" class=\"mbr-section-btn pt-4 align-center\" mbr-if=\"showCardButtons\" data-toolbar=\"-mbrBtnMove\"><a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;amount=699&amp;item_name=XX+STAR+MEMBERSHIP+%E2%80%A2+12+MONTHS&amp;currency_code=USD\" class=\"btn btn-md btn-success\" data-app-placeholder=\"Type Text\" target=\"_blank\">SIGN UP NOW</a></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_anchor": "pricing-table1-1i",
-          "_isUserblock": true,
-          "_sourceTheme": "hotelm4",
-          "_cid": "rozQFxp16D",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
